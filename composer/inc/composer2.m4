@@ -4,6 +4,7 @@ ENV COMPOSER_VERSION 2.0.8
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN set -xe \
+    && apk add --update nodejs npm \
     # use own name or other previous .persistent-deps will be removed
     && apk add --no-cache --virtual .persistent-deps-composer \
         zlib-dev \
